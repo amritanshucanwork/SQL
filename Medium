@@ -11,3 +11,19 @@ Note: There will be at least two entries in the table for each type of occupatio
 ANS-  select concat(name,"(",left(Occupation,1),")") from Occupations order by name;
       select concat('There are a total of ',count(Occupation)," ",lower(Occupation),"s.") from Occupations
       group by Occupation order by count(occupation),occupation;
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Pivot the Occupation column in OCCUPATIONS so that each Name is sorted alphabetically and displayed underneath its corresponding Occupation.
+The output column headers should be Doctor, Professor, Singer, and Actor, respectively.
+
+Note: Print NULL when there are no more names corresponding to an occupation.
+
+ANS--SELECT [Doctor], [Professor], [Singer], [Actor]
+FROM (
+    SELECT row_number() over(partition by Occupation order by Name asc) as row_num,
+    Occupation, Name
+    FROM OCCUPATIONS                                                                            ------MS SQL SERVER
+) base_query
+PIVOT (
+    MAX(Name)
+    FOR Occupation IN ([Doctor], [Professor], [Singer], [Actor])
+) pivot_table
