@@ -20,3 +20,9 @@ ANS--select sum(POPULATION) from CITY where DISTRICT='California';
 Query the average population of all cities in CITY where District is California.
 
 ANS--select AVG(Population) from CITY where DISTRICT='CALIFORNIA';
+------------------------------------------------------------------------------------------------------------------------------------------
+Query the average population for all cities in CITY, rounded down to the nearest integer.
+
+Ans--select ROUND(AVG(POPULATION)) from CITY;
+-------------------------------------------------------------------------------------------------------------------------------------------
+
