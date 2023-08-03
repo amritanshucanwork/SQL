@@ -13,3 +13,10 @@ Query a count of the number of cities in CITY having a Population larger than 10
 
 ANS--select count(*) from CITY where POPULATION>100000;
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+Query the total population of all cities in CITY where District is California.
+
+ANS--select sum(POPULATION) from CITY where DISTRICT='California';
+---------------------------------------------------------------------------------------------------------------------------------------------
+Query the average population of all cities in CITY where District is California.
+
+ANS--select AVG(Population) from CITY where DISTRICT='CALIFORNIA';
