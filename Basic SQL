@@ -9,3 +9,9 @@ count(*) as count_max_salary
 from Employee
 where salary*months=(select max(salary*months) from employee);
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Q  Query the following two values from the STATION table:
+The sum of all values in LAT_N rounded to a scale of  decimal places.
+The sum of all values in LONG_W rounded to a scale of  decimal places.
+
+ANS--select ROUND(sum(LAT_N),2),ROUND(sum(LONG_W),2) from STATION;
+----------------------------------------------------------------------------------------------------------------------------------------------
